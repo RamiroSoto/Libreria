@@ -1,0 +1,12 @@
+.button {
+    -fx-background-color: rgb(226, 147, 44);
+    -fx-border-style: none;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+    

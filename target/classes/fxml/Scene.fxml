@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Stage?>
+
+<Stage fx:id="salidonga" height="435.0" resizable="false" width="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Nombre.prolibre.Controllers.FXMLController">
+    <scene>
+        <Scene stylesheets="@../Styles/styles.css">
+            <AnchorPane prefHeight="395.0" prefWidth="640.0">
+            <children>
+               <Pane fx:id="fondo" prefHeight="398.0" prefWidth="640.0">
+                  <children>
+                     <ImageView fitHeight="400.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../img/minecraft_biblioteca_2.jpg" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </Pane>
+               <Pane fx:id="menu" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Button fx:id="Btn13" layoutY="128.0" mnemonicParsing="false" onAction="#abrirRecursos" prefHeight="71.0" prefWidth="174.0" text="Recursos" />
+                     <Label layoutY="-1.0" prefHeight="53.0" prefWidth="521.0" text="Biblioteca ">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn131" layoutY="202.0" mnemonicParsing="false" onAction="#abrirUsuarios" prefHeight="71.0" prefWidth="174.0" text="Usuarios" />
+                     <Button fx:id="Btn1311" layoutY="276.0" mnemonicParsing="false" onAction="#prestarConsultar" prefHeight="71.0" prefWidth="174.0" text="Prestamos/consultas" />
+                     <Label layoutX="117.0" layoutY="55.0" prefHeight="53.0" prefWidth="521.0" text="General">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn13111" layoutX="547.0" layoutY="362.0" mnemonicParsing="false" onAction="#fuera" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                  </children>
+               </Pane>
+               <Pane fx:id="recursos" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Label prefHeight="88.0" prefWidth="317.0" text="    Recursos">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn1" layoutY="98.0" mnemonicParsing="false" onAction="#agregarRecursos" prefHeight="74.0" prefWidth="146.0" text="Agregar Recurso" />
+                     <Button fx:id="Btn11" layoutY="190.0" mnemonicParsing="false" onAction="#modificarRecursos" prefHeight="74.0" prefWidth="146.0" text="Modificar Recurso" />
+                     <Button fx:id="Btn111" layoutY="280.0" mnemonicParsing="false" onAction="#borrar_R" prefHeight="74.0" prefWidth="146.0" style="-fx-border-style: none;" text="Borrar Recurso" />
+                     <Button fx:id="Btn131111" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                     <TextField fx:id="buscar_R" alignment="TOP_CENTER" layoutX="327.0" layoutY="76.0" promptText="Buscar" />
+                     <TableView fx:id="tabla_Recursos" layoutX="147.0" layoutY="98.0" prefHeight="267.0" prefWidth="492.0">
+                        <columns>
+                           <TableColumn fx:id="titulo_Trecurso" prefWidth="106.0" text="Titulo" />
+                           <TableColumn fx:id="autor_Trecurso" prefWidth="107.0" text="Autor" />
+                           <TableColumn fx:id="anio_Trecurso" prefWidth="67.0" text="Año" />
+                           <TableColumn fx:id="editor_Trecurso" prefWidth="108.0" text="Tipo" />
+                           <TableColumn fx:id="tipo_Trecursos" prefWidth="103.0" text="Editor" />
+                        </columns>
+                     </TableView>
+                  </children>
+               </Pane>
+               <Pane fx:id="agregarRecurso" prefHeight="395.0" prefWidth="640.0">
+                  <children>
+                     <Button fx:id="Btn1311111" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                     <Button fx:id="agregar_modificar" layoutX="368.0" layoutY="208.0" mnemonicParsing="false" onAction="#agregarR" prefHeight="29.0" prefWidth="121.0" text="Agregar" />
+                     <TextField fx:id="titulo_agregarR" alignment="TOP_CENTER" layoutX="151.0" layoutY="158.0" prefHeight="25.0" prefWidth="169.0" promptText="Titulo" />
+                     <TextField fx:id="autor_agregarR" alignment="TOP_CENTER" layoutX="320.0" layoutY="158.0" prefHeight="25.0" prefWidth="169.0" promptText="Autor/editor" />
+                     <TextField fx:id="fecha_agregarR" alignment="TOP_CENTER" layoutX="151.0" layoutY="183.0" prefHeight="25.0" prefWidth="169.0" promptText="Fecha" />
+                     <TextField fx:id="editorial_agregarR" alignment="TOP_CENTER" layoutX="320.0" layoutY="183.0" prefHeight="25.0" prefWidth="169.0" promptText="Editorial/escuela" />
+                     <TextField fx:id="tipo_agregarR" alignment="TOP_CENTER" layoutX="236.0" layoutY="133.0" prefHeight="25.0" prefWidth="169.0" promptText="Tipo" />
+                     <Button fx:id="abrir_bibtext" layoutX="151.0" layoutY="208.0" mnemonicParsing="false" onAction="#bibtext" prefHeight="29.0" prefWidth="145.0" text="Agregar por bibTex" />
+                  </children>
+               </Pane>
+               <Pane fx:id="usuarios" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Label prefHeight="107.0" prefWidth="521.0" text="    Usuarios">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn12" layoutX="-5.0" layoutY="132.0" mnemonicParsing="false" onAction="#agregarUsuarios" prefHeight="71.0" prefWidth="174.0" text="Agregar Usuario" />
+                     <Button fx:id="Btn121" layoutX="-5.0" layoutY="316.0" mnemonicParsing="false" onAction="#borrar_U" prefHeight="71.0" prefWidth="174.0" text="Eliminar Usuario" />
+                     <Button fx:id="Btn1211" layoutX="-6.0" layoutY="225.0" mnemonicParsing="false" onAction="#modificarUsuarios" prefHeight="71.0" prefWidth="174.0" text="Modificar" />
+                     <Button fx:id="Btn1311113" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                     <TextField fx:id="buscar_U" alignment="TOP_CENTER" layoutX="335.0" layoutY="83.0" promptText="Buscar" />
+                     <TableView fx:id="tabla_User" layoutX="168.0" layoutY="108.0" prefHeight="257.0" prefWidth="469.0">
+                        <columns>
+                           <TableColumn fx:id="nombre_T" prefWidth="234.0" text="Nombre" />
+                           <TableColumn fx:id="matricula_T" prefWidth="220.0" text="Matricula" />
+                        </columns>
+                     </TableView>
+                     <Button fx:id="Btn13111131" layoutX="453.0" layoutY="365.0" mnemonicParsing="false" onAction="#buscarUs" prefHeight="33.0" prefWidth="91.0" text="Buscar" />
+                  </children>
+               </Pane>
+               <Pane fx:id="agregarUsuario" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Button fx:id="agregar_modificarU" layoutX="388.0" layoutY="213.0" mnemonicParsing="false" onAction="#agregarU" text="Agregar" />
+                     <TextField fx:id="nombre_agregarU" alignment="TOP_CENTER" layoutX="230.0" layoutY="157.0" prefHeight="28.0" prefWidth="210.0" promptText="Nombre" />
+                     <TextField fx:id="matricula_agregarU" alignment="TOP_CENTER" layoutX="230.0" layoutY="185.0" prefHeight="28.0" prefWidth="210.0" promptText="Matrícula" />
+                     <Label prefHeight="107.0" prefWidth="521.0" text="Ingrese los datos pedidos" textOverrun="CLIP">
+                        <font>
+                           <Font size="28.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn1311114" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                  </children>
+               </Pane>
+               <Pane fx:id="prestamos_consultas" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Label prefHeight="107.0" prefWidth="521.0" text=" Prestamos/Consulta">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button layoutX="42.0" layoutY="145.0" mnemonicParsing="false" onAction="#prestamos" prefHeight="83.0" prefWidth="258.0" text="Prestamo">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                     </Button>
+                     <Button layoutX="335.0" layoutY="145.0" mnemonicParsing="false" onAction="#consultas" prefHeight="83.0" prefWidth="258.0" text="Consulta">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="Btn1311117" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                  </children>
+               </Pane>
+               <Pane fx:id="prestamo" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Button layoutX="360.0" layoutY="238.0" mnemonicParsing="false" onAction="#adherir" text="Prestamo" />
+                     <TextField fx:id="matric_U" alignment="TOP_CENTER" layoutX="215.0" layoutY="133.0" prefHeight="57.0" prefWidth="211.0" promptText="Matricula usuario" />
+                     <TextField fx:id="nom_L" alignment="TOP_CENTER" layoutX="216.0" layoutY="190.0" prefHeight="48.0" prefWidth="210.0" promptText="Nombre del recurso" />
+                     <Label prefHeight="107.0" prefWidth="521.0" text=" Prestamos">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <Button fx:id="Btn1311118" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                  </children>
+               </Pane>
+               <Pane fx:id="consulta" prefHeight="395.0" prefWidth="640.0" visible="false">
+                  <children>
+                     <Label prefHeight="107.0" prefWidth="521.0" text="Consultas">
+                        <font>
+                           <Font size="53.0" />
+                        </font>
+                     </Label>
+                     <TextField alignment="TOP_CENTER" layoutX="246.0" layoutY="92.0" promptText="Buscar" />
+                     <Button fx:id="Btn1311119" layoutX="549.0" layoutY="365.0" mnemonicParsing="false" onAction="#menupn" prefHeight="33.0" prefWidth="91.0" text="Salir" />
+                     <TableView layoutX="93.0" layoutY="115.0" prefHeight="257.0" prefWidth="455.0">
+                        <columns>
+                           <TableColumn prefWidth="106.0" text="Titulo" />
+                           <TableColumn prefWidth="125.0" text="Autor/editor" />
+                           <TableColumn text="Año" />
+                           <TableColumn prefWidth="143.0" text="Editor/escuela" />
+                        </columns>
+                     </TableView>
+                  </children>
+               </Pane>
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
